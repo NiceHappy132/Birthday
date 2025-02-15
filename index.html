@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Retrieve Your Money</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        h1 { color: #007bff; }
+        .countdown { font-size: 24px; font-weight: bold; color: red; margin: 20px 0; }
+        .step { margin: 15px 0; font-size: 18px; }
+        .link { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>How to Retrieve Your Money</h1>
+    <p>Congratulations on receiving your very own Cold Hard Cash™! To access your funds, follow these simple (but unnecessarily difficult) steps:</p>
+    
+    <div class="step">1. Stare at the ice block intensely. Manifest warmth.</div>
+    <div class="step">2. Place the bottle under a lukewarm tap. If patience is not your strength, proceed to step 3.</div>
+    <div class="step">3. Use a hairdryer. If that fails, consider flamethrower technology.</div>
+    <div class="step">4. Realize you are still broke while waiting.</div>
+    <div class="step">5. Consult a financial advisor. Not for this gift, just in general.</div>
+    
+    <h2>Estimated Time Until Funds Are Available:</h2>
+    <div class="countdown" id="countdown">Calculating...</div>
+    
+    <div class="step">6. Once the ice melts, enjoy sorting through 5- and 10-cent coins like a true financial genius.</div>
+    <div class="step">7. Wonder if it was worth it.</div>
+    <div class="step">8. Spoiler: It wasn’t.</div>
+    
+    <div class="link">
+        Still confused? <a href="https://www.google.com/search?q=how+to+unfreeze+money" target="_blank">Click here for expert advice.</a>
+    </div>
+    
+    <script>
+        function startCountdown(duration) {
+            let timer = duration, hours, minutes, seconds;
+            let countdownElement = document.getElementById("countdown");
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                countdownElement.textContent = hours + ":" + minutes + ":" + seconds;
+                if (--timer < 0) {
+                    countdownElement.textContent = "Funds Available! (Maybe)";
+                }
+            }, 1000);
+        }
+        window.onload = function () {
+            startCountdown(86400); // 24-hour countdown
+        };
+    </script>
+</body>
+</html>
